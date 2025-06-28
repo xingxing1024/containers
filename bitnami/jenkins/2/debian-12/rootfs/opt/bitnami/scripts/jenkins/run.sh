@@ -47,6 +47,9 @@ if [[ -n "${JENKINS_OPTS:-}" ]]; then
 fi
 args+=("$@")
 
+# 给jenkins用户添加docker权限
+
+
 info "** Starting Jenkins **"
 if am_i_root; then
     exec_as_user "$JENKINS_DAEMON_USER" java "${args[@]}"
