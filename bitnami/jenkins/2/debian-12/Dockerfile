@@ -58,6 +58,6 @@ ENV APP_VERSION="2.504.3" \
 
 EXPOSE 8080 8443 50000
 
-USER 0
+USER 1001
 ENTRYPOINT [ "/opt/bitnami/scripts/jenkins/entrypoint.sh" ]
 CMD [ "/opt/bitnami/scripts/jenkins/run.sh" ]
