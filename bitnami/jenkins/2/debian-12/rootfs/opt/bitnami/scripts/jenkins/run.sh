@@ -48,10 +48,8 @@ fi
 args+=("$@")
 
 info "** Starting Jenkins **"
-#if am_i_root; then
-#    exec_as_user "$JENKINS_DAEMON_USER" java "${args[@]}"
-#else
-#    exec java "${args[@]}"
-#fi
-# start jenkins with specified user
-exec java "${args[@]}"
+if am_i_root; then
+    exec_as_user "$JENKINS_DAEMON_USER" java "${args[@]}"
+else
+    exec java "${args[@]}"
+fi
